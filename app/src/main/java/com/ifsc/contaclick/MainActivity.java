@@ -1,6 +1,7 @@
 package com.ifsc.contaclick;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         tvResultado=findViewById(R.id.tvResultado);
         Button b=findViewById(R.id.button);
 
+        Log.d("CicloDeVida", "onCreate");
+
         b.setOnClickListener(v -> {
             int min = Integer.parseInt(edmin.getText().toString());
             int max = Integer.parseInt(edmax.getText().toString());
@@ -35,6 +38,43 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // Log para indicar que a atividade está prestes a ser visível
+        Log.d("CicloDeVida", "onStart");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // Log para indicar que a atividade está prestes a ser visível
+        Log.d("CicloDeVida", "onPause");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Log para indicar que a atividade está prestes a ser visível
+        Log.d("CicloDeVida", "onResume");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        // Log para indicar que a atividade está prestes a ser visível
+        Log.d("CicloDeVida", "onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Log para indicar que a atividade está prestes a ser visível
+        Log.d("CicloDeVida", "onDestroy");
+    }
+
+
 
 
 }
