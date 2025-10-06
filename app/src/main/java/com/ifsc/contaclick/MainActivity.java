@@ -2,35 +2,35 @@ package com.ifsc.contaclick;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    EditText edmin, edmax;
+    ListView lvLista;
+
+    String[] nomes = new String[] {"João", "Maria", "Clara", "Arthur", "Baunilha"};
     TextView tvResultado;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        edmin=findViewById(R.id.edmin);
-        edmax=findViewById(R.id.edmax);
-        tvResultado=findViewById(R.id.tvResultado);
-        Button b=findViewById(R.id.button);
+        lvLista = findViewById(R.id.lvLista);
 
-        b.setOnClickListener(v -> {
-            int min = Integer.parseInt(edmin.getText().toString());
-            int max = Integer.parseInt(edmax.getText().toString());
-            //Random
-            Random random=new Random();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nomes);
 
-            int n=random.nextInt(max-min)+min;
-
-            tvResultado.setText(Integer.toString(n));
+        lvLista.setAdapter(adapter);
+        lvLista.setOnItemClickListener((parent, view, position, id) ->{
+            Toast.makeText(this, Integer.toString(position)+nomes[position], Toast.LENGTH_SHORT).show();
 
         });
 
