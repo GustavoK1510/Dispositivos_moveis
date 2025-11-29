@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         b.setOnClickListener(v -> {
             int min = Integer.parseInt(edmin.getText().toString());
             int max = Integer.parseInt(edmax.getText().toString());
-            //Random
+            
             Random random=new Random();
 
             int n=random.nextInt(max-min)+min;
@@ -42,35 +42,30 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        // Log para indicar que a atividade está prestes a ser visível
         Log.d("CicloDeVida", "onStart");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        // Log para indicar que a atividade está prestes a ser visível
         Log.d("CicloDeVida", "onPause");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        // Log para indicar que a atividade está prestes a ser visível
         Log.d("CicloDeVida", "onResume");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        // Log para indicar que a atividade está prestes a ser visível
         Log.d("CicloDeVida", "onStop");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // Log para indicar que a atividade está prestes a ser visível
         Log.d("CicloDeVida", "onDestroy");
     }
 
