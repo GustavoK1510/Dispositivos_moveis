@@ -9,10 +9,9 @@ public class PlanetaController {
         planetaDao = new PlanetaDao();
     }
 
-    public void addPlaneta(Planeta planeta) {//verficaria a lofica de negocio aqui
+    public void addPlaneta(Planeta planeta) {
     }
     public ArrayList<Planeta> getPlaneta() {
-        //verica se algo se algo ....
         return planetaDao.getPlanetas();
     }
     public ArrayList<String>  getNomePLanetas(){
