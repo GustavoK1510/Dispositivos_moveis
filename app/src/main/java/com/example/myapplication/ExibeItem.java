@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -26,15 +25,12 @@ public class ExibeItem extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        btnVoltar.setOnClickListener( v-> {
+            finish();
+        });
+
         String titulo = getIntent().getStringExtra("titulo");
         textViewTitulo = findViewById(R.id.textViewExibeItem);
         textViewTitulo.setText(titulo);
-
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
     }
 }
