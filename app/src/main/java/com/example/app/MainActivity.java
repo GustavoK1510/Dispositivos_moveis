@@ -27,12 +27,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        listView =findViewById(R.id.listView); //Associando view a variavel local listView
+        listView =findViewById(R.id.listView);
         planetaController = new PlanetaController();
         PlanetaAdapter adapter = new PlanetaAdapter(this,
                 R.layout.item_lista,
                 planetaController.getPlaneta());
-        listView.setAdapter(adapter);//Definindo adapter para a listView
+        listView.setAdapter(adapter);
 
     }
 }
