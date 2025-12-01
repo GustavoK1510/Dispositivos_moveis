@@ -1,4 +1,4 @@
-package com.ifsc.contaclick;
+package com.example.myapplication;
 
 import org.junit.Test;
 
